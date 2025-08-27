@@ -1,25 +1,36 @@
-import React from 'react'
+import React, { useState } from "react";
 
 function Bai8() {
-    const [check, setCheck] = useState ([])
-    const checkArr = ["di choi", "hoc code", "boi loi", "nhay day"];
-    const handleCheck = (event : React.ChangeEvent<HTMLInputElement>) => {
-        setCheck (event.target.value)
+  const [check, setCheck] = useState<string[]>([]);
+
+  const handleCheck = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    if (event.target.checked) {
+      setCheck([...check, value]);
     }
+  };
+
   return (
     <>
-    <p>So thich : {check}</p>
-        <label >
-            <input type="checkbox" value={Di choi}/> Di choi
-            <input type="text" name="" id="" value={Hoc code}/> Hoc code
-            <input type="text" name="" id="" value={{Nhay day}}/>Nhay day
-            <input type="text" name="" id="" value={Da bong} />Da bong
-            <input type="text" name="" id="" value={Boi loi}/>Boi loi
+      <p>Sở thích: {check.join(" ")}</p>
 
-
-        </label>
+      <label>
+        <input type="checkbox" value="Đi chơi" onChange={handleCheck} /> Đi chơi
+      </label>
+      <br />
+      <label>
+        <input type="checkbox" value="Học code" onChange={handleCheck} /> Học code
+      </label>
+      <br />
+      <label>
+        <input type="checkbox" value="Bơi lội" onChange={handleCheck} /> Bơi lội
+      </label>
+      <br />
+      <label>
+        <input type="checkbox" value="Nhảy dây" onChange={handleCheck} /> Nhảy dây
+      </label>
     </>
-  )
+  );
 }
 
-export default Bai8
+export default Bai8;

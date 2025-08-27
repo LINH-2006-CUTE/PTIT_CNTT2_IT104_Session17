@@ -5,6 +5,7 @@ import Bai4 from "./components/Bai4";
 import Bai5 from "./components/Bai5";
 import Bai6 from "./components/Bai6";
 import Bai7 from './components/Bai7'
+import Bai8 from "./components/Bai8";
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
       <Bai5/>
       <Bai6/>
       <Bai7/>
+      <Bai8/>
     </>
   )
 }
